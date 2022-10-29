@@ -1,0 +1,131 @@
+/*****************************************************************************
+TITLE: Claims																																
+AUTHOR:  RAKESH KUMAR
+Declaration of Authorship
+This txt file, claims.txt, is part of the assignment of CS210 at the 
+department of Computer Science and Engg, IIT Patna . 
+*****************************************************************************/
+
+Files:
+==========
+*All the files i submitted, assembler.cpp and emu.cpp and claims.txt, have my name and student id at the start, along with a declaration of authorship.
+
+The evidence for Assembler including the output files, 5 test examples has also been uploaded. They are test1(3 output files), test2(3 output files), test3
+(3 output file), test4(3 output files) and bubblesort(3 output files). All the test files have been tested and work properly. As for the evidence for the emulator is uploaded with five trace files.
+
+*Both of my cpp programs did not show any errors and warnings when i compiled it with g++ filname.cpp
+
+*Two programs are compilable with g++ asm.c -o asm and g++ emu.c -o emu.
+
+
+=============================
+Program format and structure:
+=============================
+1. The assembler:
+
+    * with two data structures to store respectively labels and mnemonic table with expected operands.
+    * uses a single routine for both passes.
+    * detects label erros.
+    * consistent and sensible formatting with sensible program structure. 
+    * sensible variable, function & type names with explanatory comments.
+		* advanced listing file.
+		* assembles test programs.
+	  * can implements and demonstrates the instruction SET.
+
+2. The emulator ( if you are submitting) :
+
+		* with three data structures to store respectively memory, mnemonic table with expected operands
+		  and a linked list structure word.
+    * loads object file, 
+    * by giving the instructions like "-befor/-after" , the program can produce memory dump before/after execution.
+    * by giving the instruction like "-trace", the program prints the result of program executed.
+    * detects errant programs.
+
+
+=============================
+Testing:
+=============================
+
+1. The assembler:
+
+I have tested five examples shown as below. The errors only occurred in the file test2.asm and 
+the program immediately stopped on the second pass. 
+
+The others were tested without any errors detected and produced three output files: listing file, 
+error log file and machine readable object file, for each example. 
+
+1)
+#Input: asm test1.asm
+#Output: 
+a. test1.l 
+b. test1.txt (without any error messages)
+c. test1.o
+
+2)
+#Input:asm test2.asm
+#Output: 
+a. test2.l 
+b. test2.txt (with error messages shown as below but also in log file)
+c. test2.o
+
+error messages:
+ERROR: A duplicate label was found on line 4
+ERROR: There is a non-numerical value on line 6
+ERROR: A numerical value was expected on line 7
+ERROR: A numerical value was not expected on line 8
+ERROR: Only one numerical value was expected on line 9
+ERROR: A bogus label name was found on line 10
+ERROR: An unknown mnemonic was found on line 11
+ERROR: An unknown mnemonic was found on line 12
+ERROR: A non existant label was found on line 5
+
+3)
+#Input:asm test3.asm
+#Output: 
+a. test3.l 
+b. test3.txt (without any error messages)
+c. test3.o
+
+
+4)
+#Input:asm test4.asm
+#Output: 
+a. test4.l 
+b. test4.txt (without any error messages)
+c. test4.o
+
+5)
+#Input:asm bubblesort.asm
+#Output: 
+a. bubblesort.l 
+b. bubblesort.txt (without any error messages)
+c. bubblesort.o
+
+
+
+2. The emulator:
+
+I have tested five examples shown as bellow.All are tested without any errors detected and produced excution data both on the screen and 
+output trace file for each example according to the usage instruction. 
+
+1)
+#Input:emu -trace test1.asm
+#Output: test1.trace
+
+
+2)
+#Input: emu -trace bubblesort.asm
+#Output: bubblesort.trace
+
+
+3)
+#Input: emu -trace test3.asm
+#Output: test3.trace. 
+
+4)
+#Input: emu -trace test4.asm
+#Output: test4.trace. 
+
+5)
+#Input: emu -trace test2.asm
+#Output: test2.trace. 
